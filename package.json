@@ -1,5 +1,5 @@
 {
-  "name": "populatejs",
+  "name": "@dastagirkhan/populatejs",
   "version": "1.0.0",
   "description": "A pure javascript library to populte html form by passing a json data",
   "main": "populatejs.js",
