@@ -6,12 +6,12 @@
 ```javascript
 (function () {
     // key value pairs where keys are the names of the form element
-    populatejs({ 
-                'last_name': 'yoyo', 
-                'feature': 'claws,scales', 
-                'sex': 'male', 
-                'pet-select': 'cat', 
-                'pet': 'dog,macaw' 
+    populatejs({
+        'last_name': 'yoyo',
+        'feature': 'claws,scales',
+        'sex': 'male',
+        'pet-select': 'cat',
+        'pet-select-multiple': 'dog,macaw'
     });
 })();
 ```

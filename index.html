@@ -21,7 +21,7 @@
             margin: .4rem;
         }
     </style>
-    <script src="populatejs.min.js "></script>
+    <script src="populatejs.min.js"></script>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
             <br>
             <legend>Choose multiple pets:</legend>
             <br>
-            <select id="pet-select" name="pet" multiple size="10">
+            <select id="pet-select-multiple" name="pet-select-multiple" multiple size="10">
                 <option value="none">-- Please choose one or more --</option>
                 <optgroup label="4-legged pets">
                     <option value="dog">Dog</option>
@@ -78,8 +78,14 @@
     </form>
     <script>
         (function () {
-            // name / value pairs, name property is the element property 'name'
-            populatejs({ 'last_name': 'yoyo', 'feature': 'claws,scales', 'sex': 'male', 'pet-select': 'cat', 'pet': 'dog,macaw' });
+            // key value pairs where keys are the names of the form element
+            populatejs({
+                'last_name': 'yoyo',
+                'feature': 'claws,scales',
+                'sex': 'male',
+                'pet-select': 'cat',
+                'pet-select-multiple': 'dog,macaw'
+            });
         })();
     </script>
 </body>

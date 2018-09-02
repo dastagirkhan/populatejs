@@ -5,8 +5,7 @@ var populatejs = (function (window, document) {
             var val = data[name];
             var $el = document.getElementsByName(name),
                 type,
-                node,
-                selectType;
+                node;
             if ($el) {
                 node = $el[0].nodeName.toLowerCase();
                 switch (node) {
