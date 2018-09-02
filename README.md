@@ -1,10 +1,21 @@
 # populatejs-html-form-made-easy
 
-A pure `javascript` library to populate html form by passing a json data;
+    A pure `javascript` library to populate html form by passing a json data;
 
 
-example: `populatejs({ 'last_name': 'yoyo', 'feature': 'claws,scales', 'sex': 'male', 'pet-select': 'cat', 'pet': 'dog,macaw' });// key value pairs where keys are the names of the form elements
-`
+```javascript
+(function () {
+    // key value pairs where keys are the names of the form element
+    populatejs({ 
+                'last_name': 'yoyo', 
+                'feature': 'claws,scales', 
+                'sex': 'male', 
+                'pet-select': 'cat', 
+                'pet': 'dog,macaw' 
+    });
+})();
+```
+
 
 
 ## Getting started with developent
