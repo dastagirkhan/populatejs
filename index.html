@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Populate JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        legend {
+            background-color: #000;
+            color: #fff;
+            padding: 3px 6px;
+        }
+
+        .output {
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        input {
+            margin: .4rem;
+        }
+    </style>
+    <script src="populatejs.min.js "></script>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>PopulateJS</legend>
+            <label class="form-label" for="last_name">Last name</label>&nbsp;
+            <input type="text" name="last_name" id="last_name">
+            <br>
+            <legend>Feature</legend>
+            <label for="horns">Horns</label>
+            <input type="checkbox" id="horns" name="feature" value="horns" />
+            <br>
+            <label for="claws">Claws</label>
+            <input type="checkbox" id="claws" name="feature" value="claws" />
+            <br>
+            <label for="scales">Scales</label>
+            <input type="checkbox" id="scales" name="feature" value="scales" />
+            <br>
+            <legend>Sex</legend>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="sex" value="male" />
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="sex" value="female" />
+            <br>
+            <legend>Choose a pet:</legend>
+            <br>
+
+            <select id="pet-select" name="pet-select">
+                <option value="">--Please choose an option--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
+            <br>
+            <br>
+            <legend>Choose multiple pets:</legend>
+            <br>
+            <select id="pet-select" name="pet" multiple size="10">
+                <option value="none">-- Please choose one or more --</option>
+                <optgroup label="4-legged pets">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </optgroup>
+                <optgroup label="Flying pets">
+                    <option value="parrot">Parrot</option>
+                    <option value="macaw">Macaw</option>
+                    <option value="albatross">Albatross</option>
+                </optgroup>
+            </select>
+        </fieldset>
+    </form>
+    <script>
+        (function () {
+            // name / value pairs, name property is the element property 'name'
+            populatejs({ 'last_name': 'yoyo', 'feature': 'claws,scales', 'sex': 'male', 'pet-select': 'cat', 'pet': 'dog,macaw' });
+        })();
+    </script>
+</body>
+
+</html>

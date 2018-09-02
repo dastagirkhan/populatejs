@@ -1,0 +1,23 @@
+{
+  "name": "populatejs",
+  "version": "1.0.0",
+  "description": "A pure javascript library to populte html form by passing a json data",
+  "main": "populate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production uglifyjs populatejs.js --mangle --output  populatejs.min.js",
+    "serve": "cross-env NODE_ENV=production http-server . -p 8888 -o"
+  },
+  "keywords": [
+    "populatejs",
+    "html",
+    "form",
+    "javascript"
+  ],
+  "author": "mdk",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "uglify-js": "^3.4.9"
+  }
+}
