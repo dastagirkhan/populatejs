@@ -1,5 +1,5 @@
-var populatejs = (function (window, document) {
-    function populate(data) {
+; (function (w) {
+    var populatejs = function (data) {
         // pouplating form values from json object
         for (var name in data) {
             var val = data[name];
@@ -14,19 +14,19 @@ var populatejs = (function (window, document) {
                         switch (type) {
                             case 'checkbox':
                                 if (val == true || val == false || val == 'checked') {
-                                    $el.setAttribute('checked', val);
+                                    $el.checked = val
                                 } else {
                                     val = val.split(",");
                                     val.map(function (v) {
                                         for (var i = 0; i < $el.length; i++) {
-                                            $el[i].value == v ? $el[i].setAttribute('checked', 'checked') : '';
+                                            $el[i].value == v ? $el[i].checked = true : '';
                                         }
                                     });
                                 }
                                 break;
                             case 'radio':
                                 for (var i = 0; i < $el.length; i++) {
-                                    $el[i].value == val ? $el[i].setAttribute('checked', 'checked') : '';
+                                    $el[i].value == val ? $el[i].checked = true : '';
                                 }
                                 break;
                             default:
@@ -39,17 +39,24 @@ var populatejs = (function (window, document) {
                             var option = $el[0].getElementsByTagName('option')
                             for (var i = 0; i < option.length; i++) {
                                 if (val.indexOf(option[i].value) != -1) {
-                                    option[i].setAttribute("selected", true);
+                                    option[i].selected = true;
                                 }
                             }
                         } else {
                             $el[0].value = val;
-                            break;
                         }
                         break;
                 }
             }
         };
     };
-    return populate;
-})(window, document);
+    if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
+        define(function () {
+            return populatejs;
+        });
+    } else if (typeof module !== 'undefined' && module.exports) {
+        module.exports = populatejs;
+    } else {
+        w.populatejs = populatejs;
+    }
+})(this);
